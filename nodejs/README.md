@@ -14,39 +14,6 @@ npm install
 
 The rest of the commands in the Node.js tutorials should be executed relative to this `nodejs` directory.
 
-## Under construction
-
-This tutorial is currently incomplete. You can try following the tutorials in the other languages
-and adapt them to Node.js, as all the same features are available in the OpenTracing API for Javascript
-(https://github.com/opentracing/opentracing-javascript). Use the following code to initialize Jaeger tracer:
-
-```javascript
-var initJaegerTracer = require("jaeger-client").initTracer;
-
-function initTracer(serviceName) {
-  var config = {
-    serviceName: serviceName,
-    sampler: {
-      type: "const",
-      param: 1,
-    },
-    reporter: {
-      logSpans: true,
-    },
-  };
-  var options = {
-    logger: {
-      info: function logInfo(msg) {
-        console.log("INFO ", msg);
-      },
-      error: function logError(msg) {
-        console.log("ERROR", msg);
-      },
-    },
-  };
-  return initJaegerTracer(config, options);
-}
-```
 
 ## Lessons
 
